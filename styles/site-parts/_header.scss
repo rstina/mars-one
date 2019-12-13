@@ -1,0 +1,140 @@
+header {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    rgba(36, 2, 2, 0.5),
+    rgba(193, 85, 85, 0.5)
+  );
+  .banner-heading {
+    align-self: flex-start;
+    justify-self: center;
+    max-width: 500px;
+    padding: 10vh;
+    color: $color--white;
+    z-index: 1;
+    p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $color--pale-blue;
+    }
+    h1 {
+      font-size: 1.6rem;
+      border-bottom: 3px solid $color--white;
+    }
+  }
+  .banner-heading-join {
+    align-self: flex-end;
+    justify-self: flex-start;
+  }
+
+  .nav-container {
+    z-index: 2;
+    background: $color--darker-blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: $color--white;
+    .nav--active {
+      border-bottom: 2px solid $color--red;
+    }
+    img {
+      max-height: 60px;
+    }
+    li + li {
+      margin-left: 1rem;
+    }
+    ul {
+      margin: 0 0 1rem 0;
+      padding: 0;
+      li {
+        list-style: none;
+        display: inline;
+        a {
+          font-size: 0.9rem;
+          font-weight: 600;
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+.index {
+  background: center / cover url("../../images/page-1/hero-1.jpg") no-repeat;
+}
+.faq {
+  background: center / cover url("../../images/page-2/hero-2.jpg") no-repeat;
+}
+.join {
+  background: center / cover url("../../images/page-3/hero-3.jpg") no-repeat;
+}
+
+.ellipse-1-join,
+.ellipse-2-join,
+.ellipse-1,
+.ellipse-2 {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  clip-path: ellipse(72% 57% at 27% 100%);
+  background-image: linear-gradient(rgba(21, 52, 98, 0.7), #5e98e2);
+}
+
+.ellipse-2-join {
+  clip-path: ellipse(71.5% 55% at 27% 100%);
+  background-image: linear-gradient(rgba(21, 52, 98, 0.9), #00132c);
+}
+
+.ellipse-1 {
+  clip-path: ellipse(68% 77% at 60% 0%);
+  background-image: linear-gradient(#5e98e2, rgba(21, 52, 98, 0.7));
+}
+.ellipse-2 {
+  clip-path: ellipse(67.75% 75.5% at 60% 0%);
+  background-image: linear-gradient(#00132c, rgba(21, 52, 98, 0.9));
+}
+
+@media only screen and (min-width: 600px) {
+  header {
+    .banner-heading {
+      align-self: flex-start;
+      justify-self: flex-end;
+      padding: 9vw;
+      p {
+        font-size: 1.6rem;
+        line-height: 2rem;
+      }
+      h1 {
+        font-size: 2.8rem;
+        border-bottom: 5px solid $color--white;
+      }
+    }
+    .banner-heading-join {
+      justify-self: flex-start;
+      align-self: flex-end;
+    }
+    .nav-container {
+      flex-direction: row;
+      padding: 0.25rem 1rem;
+      ul {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  header {
+    .nav-container {
+      padding: 0.25rem 2rem;
+    }
+    .banner-heading {
+      max-height: 25%;
+    }
+  }
+}

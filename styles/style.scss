@@ -1,0 +1,25 @@
+@import "variables", "mixins", "extends", "site-parts/header",
+  "site-parts/footer", "site-parts/selling-section", "site-parts/article-section";
+
+body {
+  font-family: $font--main-font-family;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+img,
+ul,
+li {
+  @extend %zero-padding-margin;
+}
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  color: $color--dark-grey;
+}

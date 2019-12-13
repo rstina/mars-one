@@ -1,0 +1,13 @@
+footer {
+  background: $color--muddy-blue;
+  color: $color--white;
+  padding: 3rem;
+  text-align: center;
+  p {
+    color: $color--white;
+  }
+  span {
+    color: $color--pale-red;
+    font-weight: 600;
+  }
+}
