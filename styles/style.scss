@@ -1,9 +1,11 @@
 @import "variables", "mixins", "extends", "site-parts/header",
-  "site-parts/footer", "site-parts/selling-section", "site-parts/article-section";
+  "site-parts/footer", "site-parts/selling-section",
+  "site-parts/article-section","site-parts/form-section";
 
 body {
   font-family: $font--main-font-family;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 body,

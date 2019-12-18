@@ -9,13 +9,14 @@
       href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800|Poppins:400,500,700&display=swap"
       rel="stylesheet"
     />
+
     <title>Mars One - Join us</title>
   </head>
   <body>
-    <div class="join">
+    <div class="join__bg">
       <header class="join-header">
         <div class="nav-container">
-          <a href="#" class="header__link"
+          <a href="index.html" class="header__link"
             ><img src="images/logo.png" alt="Mars One logo"
           /></a>
           <nav class="header__nav">
@@ -27,42 +28,62 @@
           </nav>
         </div>
         <section class="banner-heading banner-heading-join">
-            <h1>Be brave, join the journey!</h1>
-            <p>Be one of the next heroes in space</p>
+          <h1>Be brave, join the journey!</h1>
+          <p>Be one of the next heroes in space</p>
         </section>
       </header>
-      <div class="ellipse-1-join"></div>
-      <div class="ellipse-2-join"></div>
     </div>
+
     <main>
-      <section class="article-section">
+      <section class="form-section join">
         <h2>Join us in the mission</h2>
         <p>
           Be part of the mission. Send us your motivation of why just you should
           be the next space traveler
         </p>
-        <article class="article-container">
+
+        <article>
           <form>
-            <label for="first-name">First name</label>
-            <input type="text" name="first-name" placeholder="Han Solo" />
-            <br /><br />
-            <label for="last-name">Last name</label>
-            <input type="text" name="last-name" />
-            <br /><br />
-            <label for="dob">Date of Birth</label>
-            <input type="text" name="dob" />
-            <br /><br />
-            <label for="professional">Professional</label>
-            <input type="text" name="professional" />
-            <br /><br />
-            <label for="prime-skill">Prime prime-skill</label>
-            <input type="text" name="prime-skill" />
-            <br /><br />
-            <label for="motivation">Motivation</label>
-            <br />
-            <input type="textarea" name="motivation" />
-            <br /><br />
-            <input type="submit" value="Submit" />
+            <div class="form-container">
+              <label for="first-name"
+                >First name
+                <br />
+                <input type="text" name="first-name" placeholder="Han Solo" />
+              </label>
+
+              <label for="last-name"
+                >Last name
+                <br />
+                <input type="text" name="last-name" />
+              </label>
+
+              <label for="dob"
+                >Date of Birth
+                <br />
+                <input type="date" name="dob" />
+              </label>
+
+              <label for="professional"
+                >Professional
+                <br />
+                <input type="text" name="professional" />
+              </label>
+
+              <label for="prime-skill"
+                >Prime-skill
+                <br />
+                <input type="text" name="prime-skill" />
+              </label>
+
+              <label class="motivation" for="motivation"
+                >Motivation
+                <br />
+                <textarea name="motivation"></textarea>
+              </label>
+              <div class="wrap">
+                <input class="btn-submit" type="submit" value="Submit" />
+              </div>
+            </div>
           </form>
         </article>
       </section>

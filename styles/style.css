@@ -11,6 +11,19 @@ li {
   margin: 0;
 }
 
+.index__bg::before,
+.faq__bg::before,
+.join__bg::before,
+.index__bg::after,
+.faq__bg::after,
+.join__bg::after {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  content: "";
+}
+
 header {
   display: -ms-grid;
   display: grid;
@@ -19,8 +32,8 @@ header {
   -ms-grid-rows: auto 1fr;
       grid-template-rows: auto 1fr;
   min-height: 100vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(36, 2, 2, 0.5)), to(rgba(193, 85, 85, 0.5)));
-  background-image: linear-gradient(rgba(36, 2, 2, 0.5), rgba(193, 85, 85, 0.5));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(193, 85, 85, 0.5)), to(rgba(36, 2, 2, 0.5)));
+  background-image: linear-gradient(rgba(193, 85, 85, 0.5), rgba(36, 2, 2, 0.5));
 }
 
 header .banner-heading {
@@ -28,8 +41,8 @@ header .banner-heading {
       align-self: flex-start;
   -ms-grid-column-align: center;
       justify-self: center;
-  max-width: 500px;
-  padding: 10vh;
+  max-width: 50%;
+  padding: 12vh;
   color: #ffffff;
   z-index: 1;
 }
@@ -43,6 +56,8 @@ header .banner-heading p {
 header .banner-heading h1 {
   font-size: 1.6rem;
   border-bottom: 3px solid #ffffff;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 header .banner-heading-join {
@@ -99,51 +114,46 @@ header .nav-container ul li a {
   color: inherit;
 }
 
-.index {
+.index__bg {
   background: center/cover url("../../images/page-1/hero-1.jpg") no-repeat;
 }
 
-.faq {
+.faq__bg {
   background: center/cover url("../../images/page-2/hero-2.jpg") no-repeat;
 }
 
-.join {
+.join__bg {
   background: center/cover url("../../images/page-3/hero-3.jpg") no-repeat;
 }
 
-.ellipse-1-join,
-.ellipse-2-join,
-.ellipse-1,
-.ellipse-2 {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  -webkit-clip-path: ellipse(72% 57% at 27% 100%);
-          clip-path: ellipse(72% 57% at 27% 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 52, 98, 0.7)), to(#5e98e2));
-  background-image: linear-gradient(rgba(21, 52, 98, 0.7), #5e98e2);
+.index__bg::before,
+.faq__bg::before {
+  -webkit-clip-path: ellipse(88% 79% at 60% 0%);
+          clip-path: ellipse(88% 79% at 60% 0%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(94, 151, 226, 0.9)), to(rgba(21, 52, 98, 0.9)));
+  background-image: linear-gradient(rgba(94, 151, 226, 0.9), rgba(21, 52, 98, 0.9));
 }
 
-.ellipse-2-join {
-  -webkit-clip-path: ellipse(71.5% 55% at 27% 100%);
-          clip-path: ellipse(71.5% 55% at 27% 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 52, 98, 0.9)), to(#00132c));
-  background-image: linear-gradient(rgba(21, 52, 98, 0.9), #00132c);
-}
-
-.ellipse-1 {
-  -webkit-clip-path: ellipse(68% 77% at 60% 0%);
-          clip-path: ellipse(68% 77% at 60% 0%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#5e98e2), to(rgba(21, 52, 98, 0.7)));
-  background-image: linear-gradient(#5e98e2, rgba(21, 52, 98, 0.7));
-}
-
-.ellipse-2 {
-  -webkit-clip-path: ellipse(67.75% 75.5% at 60% 0%);
-          clip-path: ellipse(67.75% 75.5% at 60% 0%);
+.index__bg::after,
+.faq__bg::after {
+  -webkit-clip-path: ellipse(87.75% 77.5% at 60% 0%);
+          clip-path: ellipse(87.75% 77.5% at 60% 0%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#00132c), to(rgba(21, 52, 98, 0.9)));
   background-image: linear-gradient(#00132c, rgba(21, 52, 98, 0.9));
+}
+
+.join__bg::before {
+  -webkit-clip-path: ellipse(82% 57% at 27% 100%);
+          clip-path: ellipse(82% 57% at 27% 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 52, 98, 0.9)), to(rgba(94, 151, 226, 0.9)));
+  background-image: linear-gradient(rgba(21, 52, 98, 0.9), rgba(94, 151, 226, 0.9));
+}
+
+.join__bg::after {
+  -webkit-clip-path: ellipse(81.5% 55% at 27% 100%);
+          clip-path: ellipse(81.5% 55% at 27% 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 52, 98, 0.9)), to(#00132c));
+  background-image: linear-gradient(rgba(21, 52, 98, 0.9), #00132c);
 }
 
 @media only screen and (min-width: 600px) {
@@ -176,6 +186,24 @@ header .nav-container ul li a {
   header .nav-container ul {
     margin: 0;
   }
+  .index__bg::before,
+  .faq__bg::before {
+    -webkit-clip-path: ellipse(68% 72% at 60% 0%);
+            clip-path: ellipse(68% 72% at 60% 0%);
+  }
+  .index__bg::after,
+  .faq__bg::after {
+    -webkit-clip-path: ellipse(67.75% 70.5% at 60% 0%);
+            clip-path: ellipse(67.75% 70.5% at 60% 0%);
+  }
+  .join__bg::before {
+    -webkit-clip-path: ellipse(73% 57% at 27% 100%);
+            clip-path: ellipse(73% 57% at 27% 100%);
+  }
+  .join__bg::after {
+    -webkit-clip-path: ellipse(72.5% 55% at 27% 100%);
+            clip-path: ellipse(72.5% 55% at 27% 100%);
+  }
 }
 
 @media only screen and (min-width: 700px) {
@@ -196,6 +224,8 @@ footer {
 
 footer p {
   color: #ffffff;
+  font-size: 0.7rem;
+  padding-top: 1rem;
 }
 
 footer span {
@@ -303,42 +333,46 @@ footer span {
   }
 }
 
-.article-section, .article-section-faq {
+.article-section {
   background: #f1f1f1;
   padding: 2rem 1rem;
 }
 
-.article-section h3, .article-section-faq h3 {
+.article-section h3 {
   color: #e32700;
 }
 
-.article-section h2, .article-section-faq h2 {
+.article-section h2 {
   color: #2c4f80;
   text-align: center;
 }
 
-.article-section p, .article-section-faq p {
+.article-section p {
   padding: 1rem 0;
 }
 
-.article-section ul, .article-section-faq ul {
+.article-section .faq p {
+  padding: 1rem 0 0 0;
+}
+
+.article-section ul {
   list-style-position: inside;
 }
 
-.article-section li, .article-section-faq li {
+.article-section ul li {
   color: #e32700;
 }
 
-.article-section li span, .article-section-faq li span {
+.article-section ul li span {
   color: #323232;
 }
 
-.article-section img, .article-section-faq img {
+.article-section img {
   display: block;
   width: 100%;
 }
 
-.article-section .article-container, .article-section-faq .article-container {
+.article-section .article-container {
   background: #ffffff;
   color: #323232;
   margin-top: 2rem;
@@ -346,20 +380,20 @@ footer span {
           box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-.article-section .article-container .article-image.smaller-image, .article-section-faq .article-container .article-image.smaller-image {
+.article-section .article-container .article-image--smaller {
   padding: 2rem 2rem 0 2rem;
 }
 
-.article-section .article-container .article-image.smaller-image img, .article-section-faq .article-container .article-image.smaller-image img {
+.article-section .article-container .article-image--smaller img {
   width: 50%;
   margin: auto;
 }
 
-.article-section .article-container .article-content, .article-section-faq .article-container .article-content {
+.article-section .article-container .article-content {
   padding: 2rem;
 }
 
-.article-section .article-container .article-content button, .article-section-faq .article-container .article-content button {
+.article-section .article-container .article-content button {
   background: #ffffff;
   color: #2c4f80;
   font-size: 0.75rem;
@@ -368,140 +402,98 @@ footer span {
   padding: 0.4rem 1.2rem;
 }
 
-.article-section .article-container form, .article-section-faq .article-container form {
-  padding: 3rem;
-}
-
-.article-section .article-container form input, .article-section-faq .article-container form input {
-  padding: 0.5rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 1px solid #2c4f80;
-  border-radius: 0.25rem;
-}
-
-.article-section .article-container form input[type=text], .article-section-faq .article-container form input[type=text] {
-  width: 100%;
-  padding-left: 1rem;
-}
-
-.article-section .article-container form input[type=text]:focus, .article-section .article-container form input[type=textarea]:focus, .article-section-faq .article-container form input[type=text]:focus, .article-section-faq .article-container form input[type=textarea]:focus {
-  border: 1px solid #ff9300;
-}
-
-.article-section .article-container form input[type=submit], .article-section-faq .article-container form input[type=submit] {
-  background: #ffffff;
-  color: #2c4f80;
-}
-
-.article-section .article-container form input[type=textarea], .article-section-faq .article-container form input[type=textarea] {
-  width: 100%;
-  height: 150px;
-}
-
-.article-section .article-container form label, .article-section-faq .article-container form label {
-  color: #2c4f80;
-}
-
 @media screen and (min-width: 500px) {
-  .article-section, .article-section-faq {
+  .article-section {
     padding: 2rem;
   }
 }
 
 @media screen and (min-width: 600px) {
-  .article-section, .article-section-faq {
+  .article-section {
     padding: 3rem;
   }
-  .article-section p, .article-section-faq p {
+  .article-section p {
     font-size: 1rem;
     line-height: 1.55rem;
   }
-  .article-section .article-container, .article-section-faq .article-container {
+  .article-section .article-container {
     padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    justify-items: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
-  .article-section .article-container .article-image.smaller-image, .article-section-faq .article-container .article-image.smaller-image {
+  .article-section .article-container .article-image {
+    max-width: 50%;
+  }
+  .article-section .article-container .article-image--smaller {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
     padding: 1rem 0 1rem 1rem;
   }
-  .article-section .article-container .article-image.smaller-image img, .article-section-faq .article-container .article-image.smaller-image img {
+  .article-section .article-container .article-image--smaller img {
     width: 67%;
   }
-  .article-section .article-container .article-image.bigger-image, .article-section-faq .article-container .article-image.bigger-image {
+  .article-section .article-container .article-image--bigger img {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    padding: 0;
-  }
-  .article-section .article-container .article-image.bigger-image img, .article-section-faq .article-container .article-image.bigger-image img {
     height: 100%;
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .article-section .article-container .article-content, .article-section-faq .article-container .article-content {
+  .article-section .article-container .article-content {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
   }
-  .article-section .heading, .article-section-faq .heading {
+  .article-section .article-container.ordinary {
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .article-section .heading {
     grid-area: heading;
   }
-  .article-section .art1, .article-section-faq .art1 {
+  .article-section .art1 {
     grid-area: art1;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .article-section .faq-art1, .article-section-faq .faq-art1 {
-    grid-area: faq-art1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .article-section .art2, .article-section-faq .art2 {
+  .article-section .art2 {
     grid-area: art2;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .article-section .faq-art2, .article-section-faq .faq-art2 {
-    grid-area: faq-art2;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .article-section .art3, .article-section-faq .art3 {
+  .article-section .art3 {
     grid-area: art3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .article-section .faq-art3, .article-section-faq .faq-art3 {
+  .article-section .faq.art1 {
+    grid-area: faq-art1;
+  }
+  .article-section .faq.art2 {
+    grid-area: faq-art2;
+  }
+  .article-section .faq.art3 {
     grid-area: faq-art3;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
 }
 
 @media screen and (min-width: 700px) {
-  .article-section, .article-section-faq {
+  .article-section {
     padding: 4rem;
   }
 }
 
 @media screen and (min-width: 1100px) {
-  .article-section, .article-section-faq {
+  .article-section.index, .article-section.faq {
     padding: 5rem;
     display: -ms-grid;
     display: grid;
@@ -512,25 +504,25 @@ footer span {
         grid-template-areas: 'heading heading' 'art1 art3 ' 'art2 art3';
     grid-gap: 3rem;
   }
-  .article-section .article-container, .article-section-faq .article-container {
-    padding: 1rem;
+  .article-section.index .article-container, .article-section.faq .article-container {
     margin-top: 0;
   }
-  .article-section .article-container.art3, .article-section-faq .article-container.art3 {
+  .article-section.index .article-container.ordinary.art3, .article-section.faq .article-container.ordinary.art3 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .article-section .article-container .article-image.smaller-image, .article-section-faq .article-container .article-image.smaller-image {
+  .article-section.index .article-container .article-image--smaller, .article-section.faq .article-container .article-image--smaller {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .article-section .article-container .article-image.smaller-image img, .article-section-faq .article-container .article-image.smaller-image img {
+  .article-section.index .article-container .article-image--smaller img, .article-section.faq .article-container .article-image--smaller img {
     padding: 0;
+    max-width: 100%;
   }
-  .article-section-faq {
+  .article-section.faq {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: auto auto auto;
@@ -539,10 +531,133 @@ footer span {
   }
 }
 
+.form-section {
+  background: #f1f1f1;
+  padding: 2rem 1rem;
+}
+
+.form-section h2 {
+  color: #2c4f80;
+  text-align: center;
+}
+
+.form-section p {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.form-section article {
+  background: #ffffff;
+  padding: 3rem;
+  margin-top: 2rem;
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form-section .form-container {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.form-section .form-container label {
+  color: #2c4f80;
+}
+
+.form-section input,
+.form-section textarea {
+  color: #323232;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  resize: none;
+  border: 1px solid #2c4f80;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+  border: 1px solid #ff9300;
+}
+
+.form-section input[type="text"],
+.form-section input[type="date"],
+.form-section textarea {
+  width: 100%;
+}
+
+.form-section textarea {
+  height: 50vw;
+  max-height: 15rem;
+}
+
+.form-section input[type="submit"] {
+  padding: 0.5rem 4rem;
+  background: #ffffff;
+  color: #2c4f80;
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 500px) {
+  .form-section {
+    padding: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .form-section .form-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto auto 1fr auto;
+        grid-template-rows: auto auto auto 1fr auto;
+    grid-gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .form-section .form-container label input {
+    margin: 0;
+  }
+  .form-section .form-container .motivation {
+    grid-column: span 2;
+  }
+  .form-section .form-container .wrap {
+    grid-column: span 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .form-section {
+    padding: 3rem;
+  }
+  .form-section p {
+    font-size: 1rem;
+    line-height: 1.55rem;
+  }
+  .form-section .form-container input[type="submit"]:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .form-section {
+    padding: 4rem;
+  }
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-size: 16px;
 }
 
 p {

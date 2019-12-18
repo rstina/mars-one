@@ -1,4 +1,4 @@
-.article-section, .article-section-faq {
+.article-section {
   background: $color--off-white;
   padding: 2rem 1rem;
   h3 {
@@ -11,13 +11,16 @@
   p {
     padding: 1rem 0;
   }
+  .faq p {
+    padding: 1rem 0 0 0;
+  }
   ul {
     list-style-position: inside;
-  }
-  li {
-    color: $color--red;
-    span {
-      color: $color--dark-grey;
+    li {
+      color: $color--red;
+      span {
+        color: $color--dark-grey;
+      }
     }
   }
   img {
@@ -29,7 +32,7 @@
     color: $color--dark-grey;
     margin-top: 2rem;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
-    .article-image.smaller-image {
+    .article-image--smaller {
       padding: 2rem 2rem 0 2rem;
       img {
         width: 50%;
@@ -47,74 +50,48 @@
         padding: 0.4rem 1.2rem;
       }
     }
-    form {
-      input{
-        padding: 0.5rem;
-        box-sizing: border-box;        
-        border: 1px solid $color--muddy-blue;
-        border-radius: 0.25rem;
-        &[type=text]{
-          width: 100%;
-          padding-left: 1rem;
-        }
-        &[type=text]:focus,
-        &[type=textarea]:focus {
-          border: 1px solid $color--orange;
-        }
-        &[type=submit] {
-          background: $color--white;
-          color: $color--muddy-blue;
-        }
-        &[type=textarea] {
-          width: 100%;
-          height: 150px;
-        }
-       }
-      label {
-        color: $color--muddy-blue;
-      }
-      padding: 3rem;
-    }
   }
 }
 
 @media screen and (min-width: 500px) { 
-  .article-section, .article-section-faq {
+  .article-section {
     padding: 2rem;
   }
 }
 
 @media screen and (min-width: 600px) {
-  .article-section, .article-section-faq {
+  .article-section {
     padding: 3rem;
     p {
       font-size: 1rem;
-    line-height: 1.55rem;
+      line-height: 1.55rem;
     }
     .article-container {
       padding: 0;
       display: flex;
-      justify-items: center;
-      align-items: center;
-      .article-image.smaller-image {
+      .article-image {
+        max-width: 50%;
+      }
+      .article-image--smaller {
         flex: 1;
         padding: 1rem 0 1rem 1rem;
         img {
           width: 67%;
         }
       }
-      .article-image.bigger-image {
+      .article-image--bigger img {
         flex: 1;
-        padding: 0;
-        img {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-        }
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
       }
       .article-content {
         flex: 1;
       }
+    }
+    .article-container.ordinary {
+      justify-items: center;
+      align-items: center;
     }
     .heading {
       grid-area: heading;
@@ -123,37 +100,34 @@
       grid-area: art1; 
       display: flex;
     }
-    .faq-art1 {
-      grid-area: faq-art1;
-      display: flex;
-    }
     .art2 { 
       grid-area: art2; 
-      display: flex;
-    }
-    .faq-art2 {
-      grid-area: faq-art2;
       display: flex;
     }
     .art3 { 
       grid-area: art3; 
       display: flex;
     }
-    .faq-art3 { 
+    .faq.art1 {
+      grid-area: faq-art1;
+    }
+    .faq.art2 {
+      grid-area: faq-art2;
+    }
+    .faq.art3 { 
       grid-area: faq-art3; 
-      display: flex;
     }
   }
 }
 
 @media screen and (min-width: 700px) {
-  .article-section, .article-section-faq {
+  .article-section {
     padding: 4rem;
   }
 }
 
 @media screen and (min-width: 1100px) {
-  .article-section, .article-section-faq {
+  .article-section.index, .article-section.faq {
     padding: 5rem;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -164,20 +138,20 @@
     'art2 art3';
     grid-gap: 3rem;
     .article-container {
-      padding: 1rem;
       margin-top: 0;
-      &.art3 { 
+      &.ordinary.art3 { 
         flex-direction: column;
       }
-      .article-image.smaller-image {
+      .article-image--smaller {
         display: flex;
         img {
           padding: 0;
+          max-width: 100%;
         }
       }
     }
   }
-  .article-section-faq {
+  .article-section.faq {
     grid-template-columns: 1fr 1fr;    
     grid-template-rows: auto auto auto;
     grid-template-areas:

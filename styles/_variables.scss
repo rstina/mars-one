@@ -1,12 +1,15 @@
-$font--main-font-family: 'Montserrat', sans-serif;
-$font--secondary-font-family: 'Poppins', sans-serif;
+$font--main-font-family: "Montserrat", sans-serif;
+$font--secondary-font-family: "Poppins", sans-serif;
 
 $color--white: #ffffff;
 $color--off-white: #f1f1f1;
 $color--dark-grey: #323232;
+$color--light-blue: rgba(94, 151, 226, 0.9);
 $color--pale-blue: #436dac;
 $color--muddy-blue: #2c4f80;
+$color--blue: rgba(21, 52, 98, 0.9);
 $color--darker-blue: #061b38;
+$color--darkest-blue: #00132c;
 $color--red: #e32700;
 $color--orange: #ff9300;
 
@@ -17,7 +20,4 @@ $color--dark-orange: #ff6800;
 $color--pale-red: #f97c7c;
 $color--muddy-red: #c15555;
 $color--darkest-red: #240202;
-$color--darkest-blue: #00132c;
 $color--dark-blue: #072142;
-$color--blue: rgba(21, 52, 98, 0.9);
-$color--light-blue: #5e98e2;

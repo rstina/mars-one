@@ -4,14 +4,14 @@ header {
   grid-template-rows: auto 1fr;
   min-height: 100vh;
   background-image: linear-gradient(
-    rgba(36, 2, 2, 0.5),
-    rgba(193, 85, 85, 0.5)
+    rgba(193, 85, 85, 0.5),
+    rgba(36, 2, 2, 0.5)
   );
   .banner-heading {
     align-self: flex-start;
     justify-self: center;
-    max-width: 500px;
-    padding: 10vh;
+    max-width: 50%;
+    padding: 12vh;
     color: $color--white;
     z-index: 1;
     p {
@@ -22,13 +22,14 @@ header {
     h1 {
       font-size: 1.6rem;
       border-bottom: 3px solid $color--white;
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.25rem;
     }
   }
   .banner-heading-join {
     align-self: flex-end;
     justify-self: flex-start;
   }
-
   .nav-container {
     z-index: 2;
     background: $color--darker-blue;
@@ -63,40 +64,43 @@ header {
   }
 }
 
-.index {
+.index__bg {
   background: center / cover url("../../images/page-1/hero-1.jpg") no-repeat;
 }
-.faq {
+.faq__bg {
   background: center / cover url("../../images/page-2/hero-2.jpg") no-repeat;
 }
-.join {
+.join__bg {
   background: center / cover url("../../images/page-3/hero-3.jpg") no-repeat;
 }
-
-.ellipse-1-join,
-.ellipse-2-join,
-.ellipse-1,
-.ellipse-2 {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  clip-path: ellipse(72% 57% at 27% 100%);
-  background-image: linear-gradient(rgba(21, 52, 98, 0.7), #5e98e2);
+.index__bg::before,
+.faq__bg::before,
+.join__bg::before,
+.index__bg::after,
+.faq__bg::after,
+.join__bg::after {
+  @extend %basic-ellipse;
 }
 
-.ellipse-2-join {
-  clip-path: ellipse(71.5% 55% at 27% 100%);
-  background-image: linear-gradient(rgba(21, 52, 98, 0.9), #00132c);
+.index__bg::before,
+.faq__bg::before {
+  clip-path: ellipse(88% 79% at 60% 0%);
+  background-image: linear-gradient($color--light-blue, $color--blue);
 }
-
-.ellipse-1 {
-  clip-path: ellipse(68% 77% at 60% 0%);
-  background-image: linear-gradient(#5e98e2, rgba(21, 52, 98, 0.7));
+.index__bg::after,
+.faq__bg::after {
+  clip-path: ellipse(87.75% 77.5% at 60% 0%);
+  background-image: linear-gradient($color--darkest-blue, $color--blue);
 }
-.ellipse-2 {
-  clip-path: ellipse(67.75% 75.5% at 60% 0%);
-  background-image: linear-gradient(#00132c, rgba(21, 52, 98, 0.9));
+.join__bg {
+  &::before {
+    clip-path: ellipse(82% 57% at 27% 100%);
+    background-image: linear-gradient($color--blue, $color--light-blue);
+  }
+  &::after {
+    clip-path: ellipse(81.5% 55% at 27% 100%);
+    background-image: linear-gradient($color--blue, $color--darkest-blue);
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -124,6 +128,24 @@ header {
       ul {
         margin: 0;
       }
+    }
+  }
+
+  .index__bg::before,
+  .faq__bg::before {
+    clip-path: ellipse(68% 72% at 60% 0%);
+  }
+  .index__bg::after,
+  .faq__bg::after {
+    clip-path: ellipse(67.75% 70.5% at 60% 0%);
+  }
+
+  .join__bg {
+    &::before {
+      clip-path: ellipse(73% 57% at 27% 100%);
+    }
+    &::after {
+      clip-path: ellipse(72.5% 55% at 27% 100%);
     }
   }
 }
