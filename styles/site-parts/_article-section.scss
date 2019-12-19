@@ -1,6 +1,7 @@
 .article-section {
   background: $color--grey-lightest;
   padding: 2rem 1rem;
+  transition: 1s;
   @media screen and (min-width: 500px) {
     padding: 2rem;
   }
@@ -9,6 +10,11 @@
   }
   @media screen and (min-width: 700px) {
     padding: 4rem;
+  }
+  @media screen and (min-width: 1100px) {
+    &.faq {
+      padding: 4rem 0 3rem 0;
+    }
   }
   h2 {
     @extend %font-h2;
@@ -23,13 +29,13 @@
   p {
     @extend %font-p;
     padding: 1rem 0;
-  }
-  .faq p {
-    padding: 1rem 0 0 0;
+    @media screen and (min-width: 1100px) {
+      padding: 2rem 0;
+    }
   }
   ul {
     list-style-position: inside;
-    padding: 1rem 0 0 0;
+    padding: 0;
     li {
       @extend %font-p;
       font-weight: 500;
@@ -48,17 +54,53 @@
     color: $color--grey-dark;
     margin-top: 2rem;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
-
     @media screen and (min-width: 600px) {
-      padding: 3rem;
+      padding: 0;
+      display: flex;
+      &.art2 .index {
+        align-self: center;
+      }
+      .article-image {
+        max-width: 50%;
+      }
+      .article-image--bigger img {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      &.ordinary {
+        justify-items: center;
+        align-items: center;
+        .article-content {
+          padding: 3rem;
+        }
+      }
+    }
+    @media screen and (min-width: 1100px) {
+      &.art1 .faq {
+        align-self: flex-start;
+      }
     }
     .article-image--smaller {
       padding: 2rem 2rem 0 2rem;
+      @media screen and (min-width: 600px) {
+        flex: 1;
+        padding: 0 0 0 3rem;
+      }
       img {
         width: 50%;
         margin: auto;
+        @media screen and (min-width: 600px) {
+          width: 67%;
+        }
         @media screen and (min-width: 700px) {
           width: 50%;
+        }
+        &.red-planet {
+          @media screen and (min-width: 1100px) {
+            padding: 0 0 0 3.25rem;
+          }
         }
       }
     }
@@ -81,42 +123,33 @@
           background: $color--blue-muddy;
         }
       }
-    }
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .article-section {
-    .article-container {
-      padding: 0;
-      display: flex;
-      &.art2 .index {
-        align-self: center;
-      }
-      .article-image {
-        max-width: 50%;
-      }
-      .article-image--smaller {
-        flex: 1;
-        padding: 1rem 0 1rem 1rem;
-        img {
-          width: 67%;
+      @media screen and (min-width: 1100px) {
+        &.faq {
+          padding: 7rem 5rem;
+          .p-extra-padding {
+            padding-top: 4rem;
+          }
         }
       }
-      .article-image--bigger img {
-        flex: 1;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+    }
+    @media screen and (min-width: 1100px) {
+      margin-top: 0;
+      &.ordinary.art3 {
+        flex-direction: column;
+      }
+      .article-image--smaller {
+        display: flex;
+        padding: 0;
+        img {
+          max-width: 100%;
+          &[alt="sun"] {
+            width: 100%;
+          }
+        }
       }
     }
-    .article-container.ordinary {
-      justify-items: center;
-      align-items: center;
-      .article-content {
-        padding: 3rem;
-      }
-    }
+  }
+  @media screen and (min-width: 600px) {
     .heading {
       grid-area: heading;
     }
@@ -142,45 +175,25 @@
       grid-area: faq-art3;
     }
   }
-}
-
-@media screen and (min-width: 1100px) {
-  .article-section {
-    p {
-      padding: 2rem 0;
+  @media screen and (min-width: 1100px) {
+    & {
+      padding: 6rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto 1fr 1fr;
+      grid-template-areas:
+        "heading heading"
+        "art1 art3 "
+        "art2 art3";
+      grid-gap: 3rem;
     }
-    padding: 6rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto 1fr 1fr;
-    grid-template-areas:
-      "heading heading"
-      "art1 art3 "
-      "art2 art3";
-    grid-gap: 3rem;
-    .article-container {
-      margin-top: 0;
-      &.ordinary.art3 {
-        flex-direction: column;
-      }
-      .article-image--smaller {
-        display: flex;
-        padding: 0;
-        img {
-          max-width: 100%;
-          &[alt="sun"] {
-            width: 100%;
-          }
-        }
-      }
+    &.faq {
+      grid-template-columns: 2fr 3fr;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "heading heading"
+        "faq-art1 faq-art2 "
+        "faq-art1 faq-art3";
     }
-  }
-  .article-section.faq {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "heading heading"
-      "faq-art1 faq-art2 "
-      "faq-art1 faq-art3";
   }
 }

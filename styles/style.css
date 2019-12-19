@@ -5,6 +5,8 @@ header .banner-heading h1 {
   border-bottom: 3px solid #ffffff;
   padding-bottom: 0.25rem;
   margin-bottom: 0.25rem;
+  -webkit-transition: 0.475s;
+  transition: 0.475s;
 }
 
 @media only screen and (min-width: 700px) {
@@ -26,6 +28,8 @@ header .banner-heading h2, .selling-container .selling-container--content h2, .a
   font-size: 1.2rem;
   font-weight: 600;
   color: #e32700;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
 }
 
 @media only screen and (min-width: 700px) {
@@ -45,6 +49,8 @@ header .banner-heading h2, .selling-container .selling-container--content h2, .a
   font-size: 1.2rem;
   font-weight: 500;
   color: #e32700;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
 }
 
 @media only screen and (min-width: 700px) {
@@ -66,6 +72,8 @@ header .banner-heading h2, .selling-container .selling-container--content h2, .a
   font-size: 0.9rem;
   line-height: 1.4rem;
   color: #323232;
+  -webkit-transition: 0.5;
+  transition: 0.5;
 }
 
 @media only screen and (min-width: 700px) {
@@ -255,7 +263,7 @@ header .nav-container ul li a {
 
 .header__ellipse--index,
 .header__ellipse--faq {
-  background: center/cover url("../../images/page-1/hero-1.jpg") no-repeat;
+  background: center/cover url("../images/page-1/hero-1.jpg") no-repeat;
 }
 
 .header__ellipse--index::before,
@@ -288,11 +296,11 @@ header .nav-container ul li a {
 }
 
 .header__ellipse--faq {
-  background: center/cover url("../../images/page-2/hero-2.jpg") no-repeat;
+  background: center/cover url("../images/page-2/hero-2.jpg") no-repeat;
 }
 
 .header__ellipse--join {
-  background: center/cover url("../../images/page-3/hero-3.jpg") no-repeat;
+  background: center/cover url("../images/page-3/hero-3.jpg") no-repeat;
 }
 
 .header__ellipse--join::before {
@@ -349,7 +357,7 @@ footer h2 {
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 500px) {
   footer {
     padding: 5rem;
   }
@@ -686,6 +694,8 @@ footer h2 {
 .article-section {
   background: #f1f1f1;
   padding: 2rem 1rem;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 @media screen and (min-width: 500px) {
@@ -706,6 +716,12 @@ footer h2 {
   }
 }
 
+@media screen and (min-width: 1100px) {
+  .article-section.faq {
+    padding: 4rem 0 3rem 0;
+  }
+}
+
 .article-section h2 {
   font-weight: 800;
   color: #2c4f80;
@@ -717,13 +733,15 @@ footer h2 {
   padding: 1rem 0;
 }
 
-.article-section .faq p {
-  padding: 1rem 0 0 0;
+@media screen and (min-width: 1100px) {
+  .article-section p {
+    padding: 2rem 0;
+  }
 }
 
 .article-section ul {
   list-style-position: inside;
-  padding: 1rem 0 0 0;
+  padding: 0;
 }
 
 .article-section ul li {
@@ -750,7 +768,43 @@ footer h2 {
 
 @media screen and (min-width: 600px) {
   .article-section .article-container {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .article-section .article-container.art2 .index {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .article-section .article-container .article-image {
+    max-width: 50%;
+  }
+  .article-section .article-container .article-image--bigger img {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .article-section .article-container.ordinary {
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .article-section .article-container.ordinary .article-content {
     padding: 3rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .article-section .article-container.art1 .faq {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 }
 
@@ -758,14 +812,35 @@ footer h2 {
   padding: 2rem 2rem 0 2rem;
 }
 
+@media screen and (min-width: 600px) {
+  .article-section .article-container .article-image--smaller {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0 0 0 3rem;
+  }
+}
+
 .article-section .article-container .article-image--smaller img {
   width: 50%;
   margin: auto;
 }
 
+@media screen and (min-width: 600px) {
+  .article-section .article-container .article-image--smaller img {
+    width: 67%;
+  }
+}
+
 @media screen and (min-width: 700px) {
   .article-section .article-container .article-image--smaller img {
     width: 50%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .article-section .article-container .article-image--smaller img.red-planet {
+    padding: 0 0 0 3.25rem;
   }
 }
 
@@ -797,48 +872,40 @@ footer h2 {
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1100px) {
+  .article-section .article-container .article-content.faq {
+    padding: 7rem 5rem;
+  }
+  .article-section .article-container .article-content.faq .p-extra-padding {
+    padding-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
   .article-section .article-container {
-    padding: 0;
+    margin-top: 0;
+  }
+  .article-section .article-container.ordinary.art3 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .article-section .article-container .article-image--smaller {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-  .article-section .article-container.art2 .index {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-  }
-  .article-section .article-container .article-image {
-    max-width: 50%;
-  }
-  .article-section .article-container .article-image--smaller {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    padding: 1rem 0 1rem 1rem;
+    padding: 0;
   }
   .article-section .article-container .article-image--smaller img {
-    width: 67%;
+    max-width: 100%;
   }
-  .article-section .article-container .article-image--bigger img {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    height: 100%;
+  .article-section .article-container .article-image--smaller img[alt="sun"] {
     width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
-  .article-section .article-container.ordinary {
-    justify-items: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .article-section .article-container.ordinary .article-content {
-    padding: 3rem;
-  }
+}
+
+@media screen and (min-width: 600px) {
   .article-section .heading {
     grid-area: heading;
   }
@@ -883,33 +950,9 @@ footer h2 {
         grid-template-areas: "heading heading" "art1 art3 " "art2 art3";
     grid-gap: 3rem;
   }
-  .article-section p {
-    padding: 2rem 0;
-  }
-  .article-section .article-container {
-    margin-top: 0;
-  }
-  .article-section .article-container.ordinary.art3 {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .article-section .article-container .article-image--smaller {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 0;
-  }
-  .article-section .article-container .article-image--smaller img {
-    max-width: 100%;
-  }
-  .article-section .article-container .article-image--smaller img[alt="sun"] {
-    width: 100%;
-  }
   .article-section.faq {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 2fr 3fr;
+        grid-template-columns: 2fr 3fr;
     -ms-grid-rows: auto auto auto;
         grid-template-rows: auto auto auto;
         grid-template-areas: "heading heading" "faq-art1 faq-art2 " "faq-art1 faq-art3";
@@ -919,6 +962,8 @@ footer h2 {
 .form-section {
   background: #f1f1f1;
   padding: 2rem 1rem;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 @media screen and (min-width: 500px) {
@@ -987,10 +1032,16 @@ footer h2 {
 
 .form-section article {
   background: #ffffff;
-  padding: 3rem;
+  padding: 1rem;
   margin-top: 2rem;
   -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (min-width: 500px) {
+  .form-section article {
+    padding: 2rem;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -1010,27 +1061,27 @@ footer h2 {
   margin: auto;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 900px) {
   .form-section .form-container {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    -ms-grid-rows: auto auto auto 1fr auto;
-        grid-template-rows: auto auto auto 1fr auto;
+    -ms-grid-columns: 2fr 2fr 1fr;
+        grid-template-columns: 2fr 2fr 1fr;
+    -ms-grid-rows: auto auto 1fr auto;
+        grid-template-rows: auto auto 1fr auto;
     grid-gap: 2rem;
     margin-bottom: 2rem;
   }
   .form-section .form-container .motivation {
-    grid-column: span 2;
+    grid-column: span 3;
   }
   .form-section .form-container .wrap {
-    grid-column: span 2;
+    grid-column: span 3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1100px) {
   .form-section .form-container {
     grid-gap: 3.6rem;
   }
@@ -1045,12 +1096,12 @@ footer h2 {
   margin: 1rem 0 0.25rem 0;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 900px) {
   .form-section .form-container label {
     font-size: 0.9rem;
   }
   .form-section .form-container label br {
-    margin-bottom: 1.5rem 0 0 0;
+    margin: 0;
   }
   .form-section .form-container label input {
     margin: 0;
@@ -1063,8 +1114,10 @@ footer h2 {
           box-sizing: border-box;
   resize: none;
   border: 1px solid #2c4f80;
-  border-radius: 0.25rem;
+  border-radius: 0.3rem;
   padding: 0.5rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .form-section input:focus,
@@ -1083,10 +1136,6 @@ footer h2 {
 .form-section input[type="date"],
 .form-section textarea {
   width: 100%;
-}
-
-.form-section input[type="date"]:focus::before {
-  content: "" !important;
 }
 
 .form-section input[type="submit"] {

@@ -128,7 +128,7 @@ header {
 
 .header__ellipse--index,
 .header__ellipse--faq {
-  background: center / cover url("../../images/page-1/hero-1.jpg") no-repeat;
+  background: center / cover url("../images/page-1/hero-1.jpg") no-repeat;
   &::before,
   &::after {
     @extend %basic-ellipse;
@@ -152,11 +152,11 @@ header {
 }
 
 .header__ellipse--faq {
-  background: center / cover url("../../images/page-2/hero-2.jpg") no-repeat;
+  background: center / cover url("../images/page-2/hero-2.jpg") no-repeat;
 }
 
 .header__ellipse--join {
-  background: center / cover url("../../images/page-3/hero-3.jpg") no-repeat;
+  background: center / cover url("../images/page-3/hero-3.jpg") no-repeat;
   &::before,
   &::after {
     @extend %basic-ellipse;

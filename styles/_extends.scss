@@ -5,6 +5,7 @@
   border-bottom: 3px solid $color--white;
   padding-bottom: 0.25rem;
   margin-bottom: 0.25rem;
+  transition: 0.475s;
   @media only screen and (min-width: 700px) {
     font-size: 2.5rem;
     border-bottom: 4px solid $color--white;
@@ -20,6 +21,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: $color--red;
+  transition: 0.35s;
   @media only screen and (min-width: 700px) {
     font-size: 1.55rem;
   }
@@ -33,6 +35,7 @@
   font-size: 1.2rem;
   font-weight: 500;
   color: $color--red;
+  transition: 0.35s;
   @media only screen and (min-width: 700px) {
     font-size: 1.3rem;
   }
@@ -46,6 +49,7 @@
   font-size: 0.9rem;
   line-height: 1.4rem;
   color: $color--grey-dark;
+  transition: 0.5;
   @media only screen and (min-width: 700px) {
     font-size: 1rem;
     line-height: 1.6rem;
