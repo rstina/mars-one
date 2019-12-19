@@ -1,12 +1,12 @@
 .article-section {
-  background: $color--off-white;
+  background: $color--grey-lightest;
   padding: 2rem 1rem;
+  h2 {
+    color: $color--blue-muddy;
+    text-align: center;
+  }
   h3 {
     color: $color--red;
-  }
-  h2 {
-    color: $color--muddy-blue;
-    text-align: center;
   }
   p {
     padding: 1rem 0;
@@ -16,10 +16,13 @@
   }
   ul {
     list-style-position: inside;
+    padding: 1rem 0 0 0;
     li {
       color: $color--red;
+      font-size: 0.9rem;
+      line-height: 1.5rem;
       span {
-        color: $color--dark-grey;
+        color: $color--grey-dark;
       }
     }
   }
@@ -29,7 +32,7 @@
   }
   .article-container {
     background: $color--white;
-    color: $color--dark-grey;
+    color: $color--grey-dark;
     margin-top: 2rem;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
     .article-image--smaller {
@@ -44,9 +47,9 @@
       button {
         transition: 0.5s;
         background: $color--white;
-        color: $color--muddy-blue;
+        color: $color--blue-muddy;
         font-size: 0.75rem;
-        border: 1px solid $color--muddy-blue;
+        border: 1px solid $color--blue-muddy;
         border-radius: 0.5rem;
         padding: 0.4rem 1.2rem;
       }
@@ -94,7 +97,7 @@
         button:hover {
           cursor: pointer;
           color: $color--white;
-          background: $color--muddy-blue;
+          background: $color--blue-muddy;
         }
       }
     }

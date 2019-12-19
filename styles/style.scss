@@ -3,9 +3,9 @@
   "site-parts/article-section","site-parts/form-section";
 
 body {
-  font-family: $font--main-font-family;
   box-sizing: border-box;
   font-size: 16px;
+  font-family: $font--main-font-family;
 }
 
 body,
@@ -21,7 +21,5 @@ li {
 }
 
 p {
-  font-size: 0.9rem;
-  line-height: 1.4rem;
-  color: $color--dark-grey;
+  @extend %font-mobile-p;
 }

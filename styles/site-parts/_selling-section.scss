@@ -49,7 +49,6 @@
   @include animation--orbit(6rem, 8s);
   animation-delay: -4s;
 }
-
 .earth {
   position: absolute;
   animation: orbit-me 15s infinite linear;
@@ -73,7 +72,6 @@
 
 @media only screen and (min-width: 500px) {
   .selling-container {
-    display: flex;
     flex-direction: row-reverse;
     img {
       width: 100%;

@@ -1,9 +1,15 @@
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  color: #323232;
+}
+
 body,
 h1,
 h2,
 h3,
-h4,
-p,
+h4, p,
 img,
 ul,
 li {
@@ -11,12 +17,9 @@ li {
   margin: 0;
 }
 
-.index__bg::before,
-.faq__bg::before,
-.join__bg::before,
-.index__bg::after,
-.faq__bg::after,
-.join__bg::after {
+.header__ellipse--index::before, .header__ellipse--index::after,
+.header__ellipse--faq::before,
+.header__ellipse--faq::after, .header__ellipse--join::before, .header__ellipse--join::after {
   position: absolute;
   top: 0;
   height: 100vh;
@@ -47,17 +50,33 @@ header .banner-heading {
       justify-self: center;
 }
 
+header .banner-heading h1 {
+  font-size: 1.6rem;
+  border-bottom: 3px solid #ffffff;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 header .banner-heading p {
   font-size: 1.2rem;
   font-weight: 600;
   color: #436dac;
 }
 
-header .banner-heading h1 {
-  font-size: 1.6rem;
-  border-bottom: 3px solid #ffffff;
-  padding-bottom: 0.25rem;
-  margin-bottom: 0.25rem;
+@media only screen and (min-width: 700px) {
+  header .banner-heading {
+    padding: 9vw;
+    max-height: 25%;
+    justify-self: flex-end;
+  }
+  header .banner-heading p {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+  header .banner-heading h1 {
+    font-size: 2.8rem;
+    border-bottom: 5px solid #ffffff;
+  }
 }
 
 header .banner-heading-join {
@@ -118,61 +137,7 @@ header .nav-container ul li a {
   color: inherit;
 }
 
-.index__bg {
-  background: center/cover url("../../images/page-1/hero-1.jpg") no-repeat;
-}
-
-.faq__bg {
-  background: center/cover url("../../images/page-2/hero-2.jpg") no-repeat;
-}
-
-.join__bg {
-  background: center/cover url("../../images/page-3/hero-3.jpg") no-repeat;
-}
-
-.index__bg::before,
-.faq__bg::before {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(94, 151, 226, 0.9)), to(rgba(21, 52, 98, 0.9)));
-  background-image: linear-gradient(rgba(94, 151, 226, 0.9), rgba(21, 52, 98, 0.9));
-  -webkit-clip-path: ellipse(88% 79% at 60% 0%);
-          clip-path: ellipse(88% 79% at 60% 0%);
-}
-
-.index__bg::after,
-.faq__bg::after {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#00132c), to(rgba(21, 52, 98, 0.9)));
-  background-image: linear-gradient(#00132c, rgba(21, 52, 98, 0.9));
-  -webkit-clip-path: ellipse(87.75% 77.5% at 60% 0%);
-          clip-path: ellipse(87.75% 77.5% at 60% 0%);
-}
-
-.join__bg::before {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 52, 98, 0.9)), to(rgba(94, 151, 226, 0.9)));
-  background-image: linear-gradient(rgba(21, 52, 98, 0.9), rgba(94, 151, 226, 0.9));
-  -webkit-clip-path: ellipse(82% 57% at 27% 100%);
-          clip-path: ellipse(82% 57% at 27% 100%);
-}
-
-.join__bg::after {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 52, 98, 0.9)), to(#00132c));
-  background-image: linear-gradient(rgba(21, 52, 98, 0.9), #00132c);
-  -webkit-clip-path: ellipse(81.5% 55% at 27% 100%);
-          clip-path: ellipse(81.5% 55% at 27% 100%);
-}
-
-@media only screen and (min-width: 600px) {
-  header .banner-heading {
-    padding: 9vw;
-    justify-self: flex-end;
-  }
-  header .banner-heading p {
-    font-size: 1.6rem;
-    line-height: 2rem;
-  }
-  header .banner-heading h1 {
-    font-size: 2.8rem;
-    border-bottom: 5px solid #ffffff;
-  }
+@media screen and (min-width: 600px) {
   header .nav-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -187,32 +152,78 @@ header .nav-container ul li a {
     cursor: pointer;
     border-bottom: 2px solid #ff9300;
   }
-  .index__bg::before,
-  .faq__bg::before {
-    -webkit-clip-path: ellipse(68% 72% at 60% 0%);
-            clip-path: ellipse(68% 72% at 60% 0%);
-  }
-  .index__bg::after,
-  .faq__bg::after {
-    -webkit-clip-path: ellipse(67.75% 70.5% at 60% 0%);
-            clip-path: ellipse(67.75% 70.5% at 60% 0%);
-  }
-  .join__bg::before {
-    -webkit-clip-path: ellipse(73% 57% at 27% 100%);
-            clip-path: ellipse(73% 57% at 27% 100%);
-  }
-  .join__bg::after {
-    -webkit-clip-path: ellipse(72.5% 55% at 27% 100%);
-            clip-path: ellipse(72.5% 55% at 27% 100%);
-  }
 }
 
-@media only screen and (min-width: 700px) {
+@media screen and (min-width: 700px) {
   header .nav-container {
     padding: 0.25rem 2rem;
   }
-  header .banner-heading {
-    max-height: 25%;
+}
+
+.header__ellipse--index,
+.header__ellipse--faq {
+  background: center/cover url("../../images/page-1/hero-1.jpg") no-repeat;
+}
+
+.header__ellipse--index::before,
+.header__ellipse--faq::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(94, 151, 226, 0.9)), to(rgba(21, 52, 98, 0.9)));
+  background-image: linear-gradient(rgba(94, 151, 226, 0.9), rgba(21, 52, 98, 0.9));
+  -webkit-clip-path: ellipse(88% 79% at 60% 0%);
+          clip-path: ellipse(88% 79% at 60% 0%);
+}
+
+.header__ellipse--index::after,
+.header__ellipse--faq::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00132c), to(rgba(21, 52, 98, 0.9)));
+  background-image: linear-gradient(#00132c, rgba(21, 52, 98, 0.9));
+  -webkit-clip-path: ellipse(87.75% 77.5% at 60% 0%);
+          clip-path: ellipse(87.75% 77.5% at 60% 0%);
+}
+
+@media only screen and (min-width: 700px) {
+  .header__ellipse--index::before,
+  .header__ellipse--faq::before {
+    -webkit-clip-path: ellipse(68% 72% at 60% 0%);
+            clip-path: ellipse(68% 72% at 60% 0%);
+  }
+  .header__ellipse--index::after,
+  .header__ellipse--faq::after {
+    -webkit-clip-path: ellipse(67.75% 70.5% at 60% 0%);
+            clip-path: ellipse(67.75% 70.5% at 60% 0%);
+  }
+}
+
+.header__ellipse--faq {
+  background: center/cover url("../../images/page-2/hero-2.jpg") no-repeat;
+}
+
+.header__ellipse--join {
+  background: center/cover url("../../images/page-3/hero-3.jpg") no-repeat;
+}
+
+.header__ellipse--join::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 52, 98, 0.9)), to(rgba(94, 151, 226, 0.9)));
+  background-image: linear-gradient(rgba(21, 52, 98, 0.9), rgba(94, 151, 226, 0.9));
+  -webkit-clip-path: ellipse(82% 57% at 27% 100%);
+          clip-path: ellipse(82% 57% at 27% 100%);
+}
+
+.header__ellipse--join::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 52, 98, 0.9)), to(#00132c));
+  background-image: linear-gradient(rgba(21, 52, 98, 0.9), #00132c);
+  -webkit-clip-path: ellipse(81.5% 55% at 27% 100%);
+          clip-path: ellipse(81.5% 55% at 27% 100%);
+}
+
+@media only screen and (min-width: 700px) {
+  .header__ellipse--join::before {
+    -webkit-clip-path: ellipse(73% 57% at 27% 100%);
+            clip-path: ellipse(73% 57% at 27% 100%);
+  }
+  .header__ellipse--join::after {
+    -webkit-clip-path: ellipse(72.5% 55% at 27% 100%);
+            clip-path: ellipse(72.5% 55% at 27% 100%);
   }
 }
 
@@ -387,9 +398,6 @@ footer span {
 
 @media only screen and (min-width: 500px) {
   .selling-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
@@ -428,13 +436,13 @@ footer span {
   padding: 2rem 1rem;
 }
 
-.article-section h3 {
-  color: #e32700;
-}
-
 .article-section h2 {
   color: #2c4f80;
   text-align: center;
+}
+
+.article-section h3 {
+  color: #e32700;
 }
 
 .article-section p {
@@ -447,10 +455,13 @@ footer span {
 
 .article-section ul {
   list-style-position: inside;
+  padding: 1rem 0 0 0;
 }
 
 .article-section ul li {
   color: #e32700;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
 }
 
 .article-section ul li span {
@@ -700,16 +711,16 @@ footer span {
   width: 100%;
 }
 
-.form-section textarea {
-  height: 50vw;
-  max-height: 15rem;
-}
-
 .form-section input[type="submit"] {
   padding: 0.5rem 4rem;
   background: #ffffff;
   color: #2c4f80;
   margin-top: 0.5rem;
+}
+
+.form-section textarea {
+  height: 50vw;
+  max-height: 15rem;
 }
 
 @media screen and (min-width: 500px) {
@@ -769,16 +780,16 @@ footer span {
   }
 }
 
+@media screen and (min-width: 1100px) {
+  .form-section {
+    padding: 7em;
+  }
+}
+
 body {
-  font-family: "Montserrat", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 16px;
-}
-
-p {
-  font-size: 0.9rem;
-  line-height: 1.4rem;
-  color: #323232;
+  font-family: "Montserrat", sans-serif;
 }
 /*# sourceMappingURL=style.css.map */

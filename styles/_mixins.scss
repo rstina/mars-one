@@ -1,7 +1,3 @@
-@mixin small-article($color) {
-  background: $color;
-}
-
 @mixin animation--orbit($translate, $duration) {
   position: absolute;
   animation: orbit $duration infinite linear;
