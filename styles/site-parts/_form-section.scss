@@ -74,7 +74,7 @@
       .wrap {
         grid-column: span 2;
         display: flex;
-        justify-content: center; 
+        justify-content: center;
       }
     }
   }
@@ -92,6 +92,8 @@
         &[type="submit"] {
           &:hover {
             cursor: pointer;
+            color: $color--white;
+            background: $color--muddy-blue;
           }
         }
       }

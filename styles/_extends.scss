@@ -10,3 +10,9 @@
   width: 100vw;
   content: "";
 }
+
+%button--hover {
+  cursor: pointer;
+  color: $color--white;
+  background: $color--muddy-blue;
+}

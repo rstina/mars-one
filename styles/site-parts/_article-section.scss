@@ -42,6 +42,7 @@
     .article-content {
       padding: 2rem;
       button {
+        transition: 0.5s;
         background: $color--white;
         color: $color--muddy-blue;
         font-size: 0.75rem;
@@ -53,7 +54,7 @@
   }
 }
 
-@media screen and (min-width: 500px) { 
+@media screen and (min-width: 500px) {
   .article-section {
     padding: 2rem;
   }
@@ -69,6 +70,9 @@
     .article-container {
       padding: 0;
       display: flex;
+      &.art2 .index {
+        align-self: center;
+      }
       .article-image {
         max-width: 50%;
       }
@@ -87,6 +91,11 @@
       }
       .article-content {
         flex: 1;
+        button:hover {
+          cursor: pointer;
+          color: $color--white;
+          background: $color--muddy-blue;
+        }
       }
     }
     .article-container.ordinary {
@@ -96,16 +105,16 @@
     .heading {
       grid-area: heading;
     }
-    .art1 { 
-      grid-area: art1; 
+    .art1 {
+      grid-area: art1;
       display: flex;
     }
-    .art2 { 
-      grid-area: art2; 
+    .art2 {
+      grid-area: art2;
       display: flex;
     }
-    .art3 { 
-      grid-area: art3; 
+    .art3 {
+      grid-area: art3;
       display: flex;
     }
     .faq.art1 {
@@ -114,8 +123,8 @@
     .faq.art2 {
       grid-area: faq-art2;
     }
-    .faq.art3 { 
-      grid-area: faq-art3; 
+    .faq.art3 {
+      grid-area: faq-art3;
     }
   }
 }
@@ -123,40 +132,51 @@
 @media screen and (min-width: 700px) {
   .article-section {
     padding: 4rem;
+    .article-container {
+      .article-image--smaller {
+        img {
+          width: 50%;
+        }
+      }
+    }
   }
 }
 
 @media screen and (min-width: 1100px) {
-  .article-section.index, .article-section.faq {
+  .article-section.index,
+  .article-section.faq {
     padding: 5rem;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto 1fr 1fr;
     grid-template-areas:
-    'heading heading'
-    'art1 art3 '
-    'art2 art3';
+      "heading heading"
+      "art1 art3 "
+      "art2 art3";
     grid-gap: 3rem;
     .article-container {
       margin-top: 0;
-      &.ordinary.art3 { 
+      &.ordinary.art3 {
         flex-direction: column;
       }
       .article-image--smaller {
         display: flex;
+        padding: 0;
         img {
-          padding: 0;
           max-width: 100%;
+          &[alt="sun"] {
+            width: 100%;
+          }
         }
       }
     }
   }
   .article-section.faq {
-    grid-template-columns: 1fr 1fr;    
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
-    'heading heading'
-    'faq-art1 faq-art2 '
-    'faq-art1 faq-art3';
+      "heading heading"
+      "faq-art1 faq-art2 "
+      "faq-art1 faq-art3";
   }
 }
