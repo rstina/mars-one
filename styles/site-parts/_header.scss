@@ -9,18 +9,15 @@ header {
   grid-template-rows: auto 1fr;
   .banner-heading {
     z-index: 1;
-    color: $color--white;
     padding: 12vh;
     max-width: 50%;
     align-self: flex-start;
     justify-self: center;
     h1 {
-      font-size: 1.6rem;
-      border-bottom: 3px solid $color--white;
-      padding-bottom: 0.25rem;
-      margin-bottom: 0.25rem;
+      @extend %font-h1;
     }
     p {
+      @extend %font-p;
       font-size: 1.2rem;
       font-weight: 600;
       color: $color--blue-pale;
@@ -33,10 +30,6 @@ header {
         p {
           font-size: 1.6rem;
           line-height: 2rem;
-        }
-        h1 {
-          font-size: 2.8rem;
-          border-bottom: 5px solid $color--white;
         }
       }
     }
@@ -102,7 +95,8 @@ header {
 .header__ellipse--index,
 .header__ellipse--faq {
   background: center / cover url("../../images/page-1/hero-1.jpg") no-repeat;
-  &::before, &::after {
+  &::before,
+  &::after {
     @extend %basic-ellipse;
   }
   &::before {
@@ -129,7 +123,8 @@ header {
 
 .header__ellipse--join {
   background: center / cover url("../../images/page-3/hero-3.jpg") no-repeat;
-  &::before, &::after {
+  &::before,
+  &::after {
     @extend %basic-ellipse;
   }
   &::before {

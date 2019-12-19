@@ -1,8 +1,29 @@
-p {
+header .banner-heading h1 {
+  font-size: 1.6rem;
+  color: #ffffff;
+  border-bottom: 3px solid #ffffff;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+@media only screen and (min-width: 700px) {
+  header .banner-heading h1 {
+    font-size: 2.8rem;
+  }
+}
+
+header .banner-heading p, p {
   font-family: "Montserrat", sans-serif;
   font-size: 0.9rem;
   line-height: 1.4rem;
   color: #323232;
+}
+
+@media only screen and (min-width: 700px) {
+  header .banner-heading p, p {
+    font-size: 1rem;
+    line-height: 1.55rem;
+  }
 }
 
 body,
@@ -41,20 +62,12 @@ header {
 
 header .banner-heading {
   z-index: 1;
-  color: #ffffff;
   padding: 12vh;
   max-width: 50%;
   -ms-flex-item-align: start;
       align-self: flex-start;
   -ms-grid-column-align: center;
       justify-self: center;
-}
-
-header .banner-heading h1 {
-  font-size: 1.6rem;
-  border-bottom: 3px solid #ffffff;
-  padding-bottom: 0.25rem;
-  margin-bottom: 0.25rem;
 }
 
 header .banner-heading p {
@@ -72,10 +85,6 @@ header .banner-heading p {
   header .banner-heading p {
     font-size: 1.6rem;
     line-height: 2rem;
-  }
-  header .banner-heading h1 {
-    font-size: 2.8rem;
-    border-bottom: 5px solid #ffffff;
   }
 }
 
