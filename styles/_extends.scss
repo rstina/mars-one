@@ -1,11 +1,43 @@
 %font-h1 {
+  font-family: $font--main-font-family;
   font-size: 1.6rem;
   color: $color--white;
   border-bottom: 3px solid $color--white;
   padding-bottom: 0.25rem;
   margin-bottom: 0.25rem;
   @media only screen and (min-width: 700px) {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+    border-bottom: 4px solid $color--white;
+  }
+  @media only screen and (min-width: 1100px) {
+    font-size: 3.75rem;
+    border-bottom: 6px solid $color--white;
+  }
+}
+
+%font-h2 {
+  font-family: $font--main-font-family;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $color--red;
+  @media only screen and (min-width: 700px) {
+    font-size: 1.55rem;
+  }
+  @media only screen and (min-width: 1100px) {
+    font-size: 2.25rem;
+  }
+}
+
+%font-h3 {
+  font-family: $font--main-font-family;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: $color--red;
+  @media only screen and (min-width: 700px) {
+    font-size: 1.3rem;
+  }
+  @media only screen and (min-width: 1100px) {
+    font-size: 1.5rem;
   }
 }
 
@@ -16,7 +48,7 @@
   color: $color--grey-dark;
   @media only screen and (min-width: 700px) {
     font-size: 1rem;
-    line-height: 1.55rem;
+    line-height: 1.6rem;
   }
 }
 

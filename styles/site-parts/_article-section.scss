@@ -1,14 +1,27 @@
 .article-section {
   background: $color--grey-lightest;
   padding: 2rem 1rem;
+  @media screen and (min-width: 500px) {
+    padding: 2rem;
+  }
+  @media screen and (min-width: 600px) {
+    padding: 3rem;
+  }
+  @media screen and (min-width: 700px) {
+    padding: 4rem;
+  }
   h2 {
+    @extend %font-h2;
+    font-weight: 800;
     color: $color--blue-muddy;
+    padding-bottom: 1rem;
     text-align: center;
   }
   h3 {
-    color: $color--red;
+    @extend %font-h3;
   }
   p {
+    @extend %font-p;
     padding: 1rem 0;
   }
   .faq p {
@@ -18,9 +31,9 @@
     list-style-position: inside;
     padding: 1rem 0 0 0;
     li {
+      @extend %font-p;
+      font-weight: 500;
       color: $color--red;
-      font-size: 0.9rem;
-      line-height: 1.5rem;
       span {
         color: $color--grey-dark;
       }
@@ -35,11 +48,18 @@
     color: $color--grey-dark;
     margin-top: 2rem;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+
+    @media screen and (min-width: 600px) {
+      padding: 3rem;
+    }
     .article-image--smaller {
       padding: 2rem 2rem 0 2rem;
       img {
         width: 50%;
         margin: auto;
+        @media screen and (min-width: 700px) {
+          width: 50%;
+        }
       }
     }
     .article-content {
@@ -53,23 +73,20 @@
         border-radius: 0.5rem;
         padding: 0.4rem 1.2rem;
       }
+      @media screen and (min-width: 600px) {
+        flex: 1;
+        button:hover {
+          cursor: pointer;
+          color: $color--white;
+          background: $color--blue-muddy;
+        }
+      }
     }
-  }
-}
-
-@media screen and (min-width: 500px) {
-  .article-section {
-    padding: 2rem;
   }
 }
 
 @media screen and (min-width: 600px) {
   .article-section {
-    padding: 3rem;
-    p {
-      font-size: 1rem;
-      line-height: 1.55rem;
-    }
     .article-container {
       padding: 0;
       display: flex;
@@ -92,18 +109,13 @@
         width: 100%;
         object-fit: cover;
       }
-      .article-content {
-        flex: 1;
-        button:hover {
-          cursor: pointer;
-          color: $color--white;
-          background: $color--blue-muddy;
-        }
-      }
     }
     .article-container.ordinary {
       justify-items: center;
       align-items: center;
+      .article-content {
+        padding: 3rem;
+      }
     }
     .heading {
       grid-area: heading;
@@ -132,23 +144,12 @@
   }
 }
 
-@media screen and (min-width: 700px) {
-  .article-section {
-    padding: 4rem;
-    .article-container {
-      .article-image--smaller {
-        img {
-          width: 50%;
-        }
-      }
-    }
-  }
-}
-
 @media screen and (min-width: 1100px) {
-  .article-section.index,
-  .article-section.faq {
-    padding: 5rem;
+  .article-section {
+    p {
+      padding: 2rem 0;
+    }
+    padding: 6rem;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto 1fr 1fr;
