@@ -426,17 +426,17 @@ footer h2 {
   }
 }
 
-.selling-container .selling-container--image img {
-  display: block;
-  width: 100%;
-}
-
 @media only screen and (min-width: 500px) {
-  .selling-container .selling-container--image img {
+  .selling-container .selling-container--image.selling-image-index img {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
+}
+
+.selling-container .selling-container--image img {
+  display: block;
+  width: 100%;
 }
 
 .selling-container .planet-bg {
@@ -444,6 +444,7 @@ footer h2 {
   background-image: linear-gradient(#072142, #00132c);
   width: 100%;
   min-height: 19rem;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,9 +452,8 @@ footer h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -465,102 +465,41 @@ footer h2 {
 }
 
 .selling-container .planet-bg .image-planet.sun {
-  width: 3.5rem;
-  z-index: 1;
-  position: absolute;
-  -webkit-animation: rotate-sun 7s infinite linear;
-          animation: rotate-sun 7s infinite linear;
-}
-
-@media only screen and (min-width: 500px) {
-  .selling-container .planet-bg .image-planet.sun {
-    width: 2.5rem;
-  }
+  width: 4rem;
 }
 
 @media only screen and (min-width: 1100px) {
   .selling-container .planet-bg .image-planet.sun {
     width: 5rem;
+    position: absolute;
+    -webkit-animation: rotate-sun 7s infinite linear;
+            animation: rotate-sun 7s infinite linear;
   }
-}
-
-@-webkit-keyframes rotate-sun {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+  @-webkit-keyframes rotate-sun {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
   }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-sun {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  @keyframes rotate-sun {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
   }
 }
 
 .selling-container .planet-bg .image-planet.mars {
-  width: 1rem;
-  position: absolute;
-  -webkit-animation: orbit 8s infinite linear;
-          animation: orbit 8s infinite linear;
-}
-
-@-webkit-keyframes orbit {
-  0% {
-    -webkit-transform: rotate(0deg) translateX(6.5rem) rotate(0deg);
-            transform: rotate(0deg) translateX(6.5rem) rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg) translateX(6.5rem) rotate(-360deg);
-            transform: rotate(360deg) translateX(6.5rem) rotate(-360deg);
-  }
-}
-
-@keyframes orbit {
-  0% {
-    -webkit-transform: rotate(0deg) translateX(6.5rem) rotate(0deg);
-            transform: rotate(0deg) translateX(6.5rem) rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg) translateX(6.5rem) rotate(-360deg);
-            transform: rotate(360deg) translateX(6.5rem) rotate(-360deg);
-  }
-}
-
-@media only screen and (min-width: 500px) {
-  .selling-container .planet-bg .image-planet.mars {
-    position: absolute;
-    -webkit-animation: orbit 8s infinite linear;
-            animation: orbit 8s infinite linear;
-  }
-  @-webkit-keyframes orbit {
-    0% {
-      -webkit-transform: rotate(0deg) translateX(4.25rem) rotate(0deg);
-              transform: rotate(0deg) translateX(4.25rem) rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg) translateX(4.25rem) rotate(-360deg);
-              transform: rotate(360deg) translateX(4.25rem) rotate(-360deg);
-    }
-  }
-  @keyframes orbit {
-    0% {
-      -webkit-transform: rotate(0deg) translateX(4.25rem) rotate(0deg);
-              transform: rotate(0deg) translateX(4.25rem) rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg) translateX(4.25rem) rotate(-360deg);
-              transform: rotate(360deg) translateX(4.25rem) rotate(-360deg);
-    }
-  }
+  width: 1.75rem;
+  z-index: 2;
 }
 
 @media only screen and (min-width: 1100px) {
@@ -572,84 +511,29 @@ footer h2 {
   }
   @-webkit-keyframes orbit {
     0% {
-      -webkit-transform: rotate(0deg) translateX(9rem) rotate(0deg);
-              transform: rotate(0deg) translateX(9rem) rotate(0deg);
+      -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg);
+              transform: rotate(0deg) translateX(150px) rotate(0deg);
     }
     100% {
-      -webkit-transform: rotate(360deg) translateX(9rem) rotate(-360deg);
-              transform: rotate(360deg) translateX(9rem) rotate(-360deg);
+      -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+              transform: rotate(360deg) translateX(150px) rotate(-360deg);
     }
   }
   @keyframes orbit {
     0% {
-      -webkit-transform: rotate(0deg) translateX(9rem) rotate(0deg);
-              transform: rotate(0deg) translateX(9rem) rotate(0deg);
+      -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg);
+              transform: rotate(0deg) translateX(150px) rotate(0deg);
     }
     100% {
-      -webkit-transform: rotate(360deg) translateX(9rem) rotate(-360deg);
-              transform: rotate(360deg) translateX(9rem) rotate(-360deg);
+      -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+              transform: rotate(360deg) translateX(150px) rotate(-360deg);
     }
   }
 }
 
 .selling-container .planet-bg .image-planet.earth {
-  width: 2rem;
-  position: absolute;
-  -webkit-animation: orbit2 5s infinite linear;
-          animation: orbit2 5s infinite linear;
-  animation-direction: reverse;
-}
-
-@-webkit-keyframes orbit2 {
-  0% {
-    -webkit-transform: rotate(0deg) translateX(4rem) rotate(0deg);
-            transform: rotate(0deg) translateX(4rem) rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg) translateX(4rem) rotate(-360deg);
-            transform: rotate(360deg) translateX(4rem) rotate(-360deg);
-  }
-}
-
-@keyframes orbit2 {
-  0% {
-    -webkit-transform: rotate(0deg) translateX(4rem) rotate(0deg);
-            transform: rotate(0deg) translateX(4rem) rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg) translateX(4rem) rotate(-360deg);
-            transform: rotate(360deg) translateX(4rem) rotate(-360deg);
-  }
-}
-
-@media only screen and (min-width: 500px) {
-  .selling-container .planet-bg .image-planet.earth {
-    position: absolute;
-    -webkit-animation: orbit2 5s infinite linear;
-            animation: orbit2 5s infinite linear;
-    animation-direction: reverse;
-    width: 1.5rem;
-  }
-  @-webkit-keyframes orbit2 {
-    0% {
-      -webkit-transform: rotate(0deg) translateX(2.5rem) rotate(0deg);
-              transform: rotate(0deg) translateX(2.5rem) rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg) translateX(2.5rem) rotate(-360deg);
-              transform: rotate(360deg) translateX(2.5rem) rotate(-360deg);
-    }
-  }
-  @keyframes orbit2 {
-    0% {
-      -webkit-transform: rotate(0deg) translateX(2.5rem) rotate(0deg);
-              transform: rotate(0deg) translateX(2.5rem) rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg) translateX(2.5rem) rotate(-360deg);
-              transform: rotate(360deg) translateX(2.5rem) rotate(-360deg);
-    }
-  }
+  width: 2.5rem;
+  z-index: 1;
 }
 
 @media only screen and (min-width: 1100px) {
@@ -657,27 +541,29 @@ footer h2 {
     position: absolute;
     -webkit-animation: orbit2 5s infinite linear;
             animation: orbit2 5s infinite linear;
+    -webkit-animation-delay: -100s;
+            animation-delay: -100s;
     animation-direction: reverse;
     width: 3rem;
   }
   @-webkit-keyframes orbit2 {
     0% {
-      -webkit-transform: rotate(0deg) translateX(6rem) rotate(0deg);
-              transform: rotate(0deg) translateX(6rem) rotate(0deg);
+      -webkit-transform: rotate(0deg) translateX(80px) rotate(0deg);
+              transform: rotate(0deg) translateX(80px) rotate(0deg);
     }
     100% {
-      -webkit-transform: rotate(360deg) translateX(6rem) rotate(-360deg);
-              transform: rotate(360deg) translateX(6rem) rotate(-360deg);
+      -webkit-transform: rotate(360deg) translateX(80px) rotate(-360deg);
+              transform: rotate(360deg) translateX(80px) rotate(-360deg);
     }
   }
   @keyframes orbit2 {
     0% {
-      -webkit-transform: rotate(0deg) translateX(6rem) rotate(0deg);
-              transform: rotate(0deg) translateX(6rem) rotate(0deg);
+      -webkit-transform: rotate(0deg) translateX(80px) rotate(0deg);
+              transform: rotate(0deg) translateX(80px) rotate(0deg);
     }
     100% {
-      -webkit-transform: rotate(360deg) translateX(6rem) rotate(-360deg);
-              transform: rotate(360deg) translateX(6rem) rotate(-360deg);
+      -webkit-transform: rotate(360deg) translateX(80px) rotate(-360deg);
+              transform: rotate(360deg) translateX(80px) rotate(-360deg);
     }
   }
 }
@@ -801,49 +687,6 @@ footer h2 {
   }
 }
 
-@media screen and (min-width: 1100px) {
-  .article-section .article-container.art1 .faq {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
-  }
-}
-
-.article-section .article-container .article-image--smaller {
-  padding: 2rem 2rem 0 2rem;
-}
-
-@media screen and (min-width: 600px) {
-  .article-section .article-container .article-image--smaller {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    padding: 0 0 0 3rem;
-  }
-}
-
-.article-section .article-container .article-image--smaller img {
-  width: 50%;
-  margin: auto;
-}
-
-@media screen and (min-width: 600px) {
-  .article-section .article-container .article-image--smaller img {
-    width: 67%;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  .article-section .article-container .article-image--smaller img {
-    width: 50%;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .article-section .article-container .article-image--smaller img.red-planet {
-    padding: 0 0 0 3.25rem;
-  }
-}
-
 .article-section .article-container .article-content {
   padding: 2rem;
 }
@@ -881,27 +724,78 @@ footer h2 {
   }
 }
 
+.article-section .article-container .article-image--smaller {
+  padding: 2rem 2rem 0 2rem;
+}
+
+@media screen and (min-width: 600px) {
+  .article-section .article-container .article-image--smaller {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0 0 0 3rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .article-section .article-container .article-image--smaller {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0;
+  }
+  .article-section .article-container .article-image--smaller.sun-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.article-section .article-container .article-image--smaller img {
+  width: 50%;
+  margin: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .article-section .article-container .article-image--smaller img {
+    width: 67%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .article-section .article-container .article-image--smaller img {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .article-section .article-container .article-image--smaller img {
+    max-width: 100%;
+  }
+  .article-section .article-container .article-image--smaller img[alt="sun"] {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .article-section .article-container .article-image--smaller img.red-planet {
+    padding: 0 0 0 3.25rem;
+  }
+}
+
 @media screen and (min-width: 1100px) {
   .article-section .article-container {
     margin-top: 0;
+  }
+  .article-section .article-container.art1 .faq {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
   .article-section .article-container.ordinary.art3 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-  .article-section .article-container .article-image--smaller {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 0;
-  }
-  .article-section .article-container .article-image--smaller img {
-    max-width: 100%;
-  }
-  .article-section .article-container .article-image--smaller img[alt="sun"] {
-    width: 100%;
   }
 }
 

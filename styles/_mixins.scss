@@ -14,7 +14,7 @@
 @mixin animation--orbit2($translate, $duration) {
   position: absolute;
   animation: orbit2 $duration infinite linear;
-  // animation-delay: -1s;
+  animation-delay: -100s;
   animation-direction: reverse;
   @keyframes orbit2 {
     0% {

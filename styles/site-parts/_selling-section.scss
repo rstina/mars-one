@@ -39,56 +39,48 @@
     }
   }
   .selling-container--image {
-    img {
-      display: block;
-      width: 100%;
+    &.selling-image-index img {
       @media only screen and (min-width: 500px) {
         height: 100%;
         object-fit: cover;
       }
+    }
+    img {
+      display: block;
+      width: 100%;
     }
   }
   .planet-bg {
     background-image: linear-gradient(#072142, #00132c);
     width: 100%;
     min-height: 19rem;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     .image-planet {
       object-fit: contain;
       &.sun {
-        width: 3.5rem;
-        z-index: 1;
-        @media only screen and (min-width: 500px) {
-          width: 2.5rem;
-        }
+        width: 4rem;
         @media only screen and (min-width: 1100px) {
           width: 5rem;
+          @include animation--rotate(7s);
         }
-        @include animation--rotate(7s);
       }
       &.mars {
-        width: 1rem;
-        @include animation--orbit(6.5rem, 8s);
-        @media only screen and (min-width: 500px) {
-          @include animation--orbit(4.25rem, 8s);
-        }
+        width: 1.75rem;
+        z-index: 2;
         @media only screen and (min-width: 1100px) {
-          @include animation--orbit(9rem, 8s);
+          @include animation--orbit(150px, 8s);
           width: 2rem;
         }
       }
       &.earth {
-        width: 2rem;
-        @include animation--orbit2(4rem, 5s);
-        @media only screen and (min-width: 500px) {
-          @include animation--orbit2(2.5rem, 5s);
-          width: 1.5rem;
-        }
+        width: 2.5rem;
+        z-index: 1;
         @media only screen and (min-width: 1100px) {
-          @include animation--orbit2(6rem, 5s);
+          @include animation--orbit2(80px, 5s);
           width: 3rem;
         }
       }
